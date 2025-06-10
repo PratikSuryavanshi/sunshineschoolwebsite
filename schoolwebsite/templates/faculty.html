@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Our Faculty - Sunshine School{% endblock %}
+{% block content %}
+
+<div class="container" data-aos="fade-up">
+  <h2 class="text-center mb-5">Meet Our Faculty</h2>
+
+  {% for i in range(1, 11) %}
+  <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-delay="{{ i * 100 }}">
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='images/f{{ i }}.jpg') }}" class="img-fluid rounded shadow" alt="Faculty {{ i }}">
+    </div>
+    <div class="col-md-6">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <td>Faculty {{ i }}</td>
+          </tr>
+          <tr>
+            <th>Qualification</th>
+            <td>M.Ed / B.Ed</td>
+          </tr>
+          <tr>
+            <th>Experience</th>
+            <td>{{ 10-i }}+ Years</td>
+          </tr>
+          <tr>
+            <th>Subject Expertise</th>
+            <td>English / Math / Science</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
